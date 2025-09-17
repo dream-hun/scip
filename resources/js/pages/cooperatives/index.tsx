@@ -66,20 +66,15 @@ export default function Index({
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Cooperatives" />
 
-            <div className="flex items-center justify-between mb-6">
-                <div>
-                    <h1 className="text-lg font-medium">Available cooperatives</h1>
-                    <p className="text-sm text-muted-foreground">
-                        {cooperatives.total} {cooperatives.total === 1 ? 'cooperative' : 'cooperatives'} found
-                    </p>
-                </div>
+            <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
+        <div className="flex items-center justify-between">
                 <Link
                     href={coopRoutes.create().url}
                     className="inline-flex items-center px-3 py-1.5 rounded-md bg-primary text-white hover:opacity-95"
                 >
                     Create cooperative
                 </Link>
-            </div>
+
 
             <div className="mb-6">
                 <div className="relative max-w-sm">
@@ -91,6 +86,7 @@ export default function Index({
                         className="pl-9"
                     />
                 </div>
+            </div>
             </div>
 
             <div className="overflow-hidden rounded-lg border border-sidebar-border/70 dark:border-sidebar-border">
@@ -222,6 +218,7 @@ export default function Index({
                     </div>
                 </div>
             )}
+            </div>
         </AppLayout>
     );
 }
